@@ -785,7 +785,7 @@ footer a{color:var(--white);text-decoration:none;font-weight:900;}
     <a href="index.html#how">How it works</a>
     <a href="index.html#story">About</a>
     <a href="catering.html">Catering</a>
-    <a href="events.html">Events</a>
+    <a href="JoinTheLab.jpg">Join The Lab</a>
     <a href="order.html" class="nav-order">Order</a>
   </nav>
 </header>
@@ -957,14 +957,16 @@ footer a{color:var(--white);text-decoration:none;font-weight:900;}
           <option>Delivery</option>
           <option>Not sure yet</option>
         </select>
+        <input id="pickup-date" type="date">
+        <input id="pickup-time" type="text" placeholder="Preferred pickup time">
         <textarea id="customer-notes" rows="4" placeholder="Notes, allergies, preferred pickup time, delivery suburb..."></textarea>
 
-        <button class="checkout-btn" onclick="sendEmailOrder()">Email Order Request</button>
-        <button class="checkout-btn whatsapp-btn" onclick="sendWhatsAppOrder()">WhatsApp Order</button>
+        <button class="checkout-btn" id="submit-order-btn" onclick="sendEmailOrder()">Complete Order Request</button>
+        
         <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
 
         <div class="small-note">
-          Your order request will be prepared with all items, total and details.
+          We will confirm availability and send payment details by email.
         </div>
       </div>
     </aside>
@@ -992,6 +994,30 @@ footer a{color:var(--white);text-decoration:none;font-weight:900;}
 
 <script>
 let cart = [];
+
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVb8t1091bOQvFAOeJJLFVY8izqBoeTVBCYJPN0NocADshW9H-MC5ozZuzifHgThzfMw/exec";
+
+function generateOrderId(){
+ return "SL" + Date.now().toString().slice(-6);
+}
+
+async function saveOrderToSheet(orderData){
+  if(GOOGLE_SCRIPT_URL.includes("PASTE_YOUR")){
+    throw new Error("Google Script URL has not been set.");
+  }
+
+  // Google Apps Script often blocks normal browser responses because of CORS.
+  // no-cors still sends the order data correctly to the Web App.
+  await fetch(GOOGLE_SCRIPT_URL,{
+    method:"POST",
+    mode:"no-cors",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify(orderData)
+  });
+
+  return true;
+}
+
 
 function changeQty(id, change){
   const input = document.getElementById(id);
@@ -1090,22 +1116,71 @@ function buildOrderText(){
   return `Sapori Lab Order Request%0D%0A%0D%0AItems:%0D%0A${items}%0D%0A%0D%0ATotal: $${total}%0D%0A%0D%0ACustomer Details:%0D%0AName: ${encodeURIComponent(name)}%0D%0APhone: ${encodeURIComponent(phone)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0APickup/Delivery: ${encodeURIComponent(method)}%0D%0ANotes: ${encodeURIComponent(notes)}%0D%0A%0D%0APlease confirm availability and send payment link.`;
 }
 
-function sendEmailOrder(){
-  const orderText = buildOrderText();
-  if(!orderText) return;
+async function sendEmailOrder(){
+  if(cart.length === 0){
+    alert("Please add at least one item to your cart.");
+    return;
+  }
 
-  const subject = "Sapori Lab Order Request";
-  const businessEmail = "info@saporilab.com.au";
-  window.location.href = `mailto:${businessEmail}?subject=${encodeURIComponent(subject)}&body=${orderText}`;
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const email = document.getElementById("customer-email").value.trim();
+
+  if(!name || !phone || !email){
+    alert("Please enter your name, phone number and email address.");
+    return;
+  }
+
+  const btn = document.getElementById("submit-order-btn");
+  const originalText = btn ? btn.textContent : "Complete Order Request";
+  if(btn){
+    btn.disabled = true;
+    btn.textContent = "Sending order...";
+    btn.style.opacity = "0.75";
+  }
+
+  const orderData = {
+    orderId: generateOrderId(),
+    name: name,
+    phone: phone,
+    email: email,
+    pickupDate: document.getElementById("pickup-date")?.value || "",
+    pickupTime: document.getElementById("pickup-time")?.value || "",
+    method: document.getElementById("customer-method").value,
+    notes: document.getElementById("customer-notes").value.trim(),
+    items: cart.map(item => ({
+      product: item.name,
+      name: item.name,
+      qty: item.qty,
+      quantity: item.qty,
+      unitPrice: item.price,
+      price: item.price
+    })),
+    total: cart.reduce((a,b)=>a+(b.price*b.qty),0)
+  };
+
+  try{
+    await saveOrderToSheet(orderData);
+    alert("Thank you. Your order request has been received. Order ID: " + orderData.orderId + ". We will confirm availability and payment details shortly.");
+    clearCart();
+    document.getElementById("customer-name").value = "";
+    document.getElementById("customer-phone").value = "";
+    document.getElementById("customer-email").value = "";
+    document.getElementById("pickup-date").value = "";
+    document.getElementById("pickup-time").value = "";
+    document.getElementById("customer-notes").value = "";
+  }catch(e){
+    console.log(e);
+    alert("Something went wrong while sending the order. Please check your internet connection or email us at info@saporilab.com.au.");
+  }finally{
+    if(btn){
+      btn.disabled = false;
+      btn.textContent = originalText;
+      btn.style.opacity = "1";
+    }
+  }
 }
 
-function sendWhatsAppOrder(){
-  const orderText = buildOrderText();
-  if(!orderText) return;
-
-  const whatsappNumber = "61400000000";
-  window.open(`https://wa.me/${whatsappNumber}?text=${orderText}`, "_blank");
-}
 </script>
 
 
