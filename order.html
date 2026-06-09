@@ -766,11 +766,6 @@ footer a{color:var(--white);text-decoration:none;font-weight:900;}
 
 <body>
 
-<iframe name="sapori-hidden-frame" id="sapori-hidden-frame" style="display:none;"></iframe>
-<form id="sapori-order-form" method="POST" target="sapori-hidden-frame" style="display:none;">
-  <input type="hidden" name="payload" id="sapori-order-payload">
-</form>
-
 <a href="#cart" class="mobile-cart-jump">View Cart</a>
 
 
@@ -966,7 +961,7 @@ footer a{color:var(--white);text-decoration:none;font-weight:900;}
         <input id="pickup-time" type="text" placeholder="Preferred pickup time">
         <textarea id="customer-notes" rows="4" placeholder="Notes, allergies, preferred pickup time, delivery suburb..."></textarea>
 
-        <button class="checkout-btn" id="submit-order-btn" onclick="sendEmailOrder()">Complete Order Request</button>
+        <button class="checkout-btn" id="submit-order-btn" onclick="sendEmailOrder()">Submit Order Request</button>
         
         <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
 
@@ -1000,49 +995,27 @@ footer a{color:var(--white);text-decoration:none;font-weight:900;}
 <script>
 let cart = [];
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxiDISqggKzETdvKg6xGbtWii-uc0SeJpOHspicrpt31ZF7oj1YqYqbV0P5ba-o5qhA-w/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNIicKuxVnUF-nsbAC0ka6RVa68Aqp54T1jf3iDEcR6XsBjgYd1Kl5kxk5N8FBGZHCyg/exec";
 
 function generateOrderId(){
  return "SL" + Date.now().toString().slice(-6);
 }
 
-function saveOrderToSheet(orderData){
-  return new Promise((resolve, reject) => {
-    if(GOOGLE_SCRIPT_URL.includes("PASTE_YOUR")){
-      reject(new Error("Google Script URL has not been set."));
-      return;
-    }
+async function saveOrderToSheet(orderData){
+  if(GOOGLE_SCRIPT_URL.includes("PASTE_YOUR")){
+    throw new Error("Google Script URL has not been set.");
+  }
 
-    const form = document.getElementById("sapori-order-form");
-    const payload = document.getElementById("sapori-order-payload");
-    const iframe = document.getElementById("sapori-hidden-frame");
-
-    if(!form || !payload || !iframe){
-      reject(new Error("Order form bridge not found."));
-      return;
-    }
-
-    form.action = GOOGLE_SCRIPT_URL;
-    payload.value = JSON.stringify(orderData);
-
-    let completed = false;
-    const timer = setTimeout(() => {
-      if(!completed){
-        completed = true;
-        resolve(true);
-      }
-    }, 1800);
-
-    iframe.onload = () => {
-      if(!completed){
-        completed = true;
-        clearTimeout(timer);
-        resolve(true);
-      }
-    };
-
-    form.submit();
+  // Google Apps Script often blocks normal browser responses because of CORS.
+  // no-cors still sends the order data correctly to the Web App.
+  await fetch(GOOGLE_SCRIPT_URL,{
+    method:"POST",
+    mode:"no-cors",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify(orderData)
   });
+
+  return true;
 }
 
 
@@ -1159,7 +1132,7 @@ async function sendEmailOrder(){
   }
 
   const btn = document.getElementById("submit-order-btn");
-  const originalText = btn ? btn.textContent : "Complete Order Request";
+  const originalText = btn ? btn.textContent : "Submit Order Request";
   if(btn){
     btn.disabled = true;
     btn.textContent = "Sending order...";
@@ -1198,7 +1171,7 @@ async function sendEmailOrder(){
     document.getElementById("customer-notes").value = "";
   }catch(e){
     console.log(e);
-    alert("Something went wrong while sending the order. Please check your internet connection or email us at info@saporilab.com.au.");
+    alert("Something went wrong while sending the order. Please try WhatsApp or email us at info@saporilab.com.au.");
   }finally{
     if(btn){
       btn.disabled = false;
@@ -1208,6 +1181,13 @@ async function sendEmailOrder(){
   }
 }
 
+function sendWhatsAppOrder(){
+  const orderText = buildOrderText();
+  if(!orderText) return;
+
+  const whatsappNumber = "61400000000";
+  window.open(`https://wa.me/${whatsappNumber}?text=${orderText}`, "_blank");
+}
 </script>
 
 
