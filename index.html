@@ -2,111 +2,279 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Order | Sapori Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Sapori Lab | Modern Italian Bakery Canberra</title>
 <style>
-:root{--blue:#042274;--blue2:#0a2f92;--dark:#031647;--white:#fefeff;--grey:#dedede;--soft:#f4f5f8;--yellow:#F2C230;--shadow:0 20px 55px rgba(4,34,116,.14)}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--blue);overflow-x:hidden}img{display:block;max-width:100%}
-header{position:fixed;inset:0 0 auto 0;z-index:1000;min-height:92px;padding:14px 7%;display:flex;align-items:center;justify-content:space-between;background:rgba(254,254,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(4,34,116,.08);overflow:hidden}
-header::before,header::after{content:"";position:absolute;pointer-events:none;opacity:.14}header::before{width:34%;height:120px;left:-8%;top:-44px;transform:rotate(-6deg);background:linear-gradient(90deg,transparent 0 3%,rgba(4,34,116,.85) 10% 55%,rgba(4,34,116,.15) 77%,transparent 96%);border-radius:45% 55% 50% 50%}header::after{width:28%;height:112px;right:-8%;bottom:-45px;transform:rotate(8deg);background:linear-gradient(90deg,transparent 0 8%,rgba(4,34,116,.12) 20%,rgba(4,34,116,.78) 50% 88%,transparent 98%);border-radius:54% 46% 50% 50%}.header-note{position:relative;z-index:2;font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;opacity:.72;min-width:190px}.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}.logo img{height:62px;width:auto}nav{position:relative;z-index:3;display:flex;align-items:center;gap:24px}nav a{text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:1.25px}.nav-order{background:var(--blue);color:#fff;padding:13px 20px;border-radius:999px}.mobile-menu-toggle{display:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(4,34,116,.15);background:#fff;position:relative;z-index:3000;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}.mobile-menu-toggle span{width:20px;height:2px;background:var(--blue);display:block;border-radius:2px;transition:.25s}
+:root{
+  --blue:#042274;
+  --blue2:#0a2f92;
+  --dark:#031647;
+  --white:#fefeff;
+  --grey:#dedede;
+  --soft:#f4f5f8;
+  --ink:#111827;
+  --yellow:#F2C230;
+  --shadow:0 24px 70px rgba(4,34,116,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--blue);overflow-x:hidden}
+a{color:inherit} img{display:block;max-width:100%}
 
-/* compact, high-conversion hero */
-.order-hero{padding:118px 7% 38px;background:linear-gradient(135deg,#fff,#f3f4f7 65%,#dedede);display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center;min-height:600px}
-.hero-copy .eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:900;margin-bottom:16px}.hero-copy h1{font-family:Georgia,serif;font-size:clamp(54px,6.5vw,96px);line-height:.87;letter-spacing:-4px}.hero-copy p{font-size:18px;line-height:1.62;color:#31406a;max-width:610px;margin-top:20px}.hero-pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.hero-pill{background:#fff;border:1px solid rgba(4,34,116,.11);padding:10px 13px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.hero-photo{height:420px;border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.19);position:relative}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%}.hero-photo-tag{position:absolute;left:18px;bottom:18px;background:var(--yellow);color:var(--blue);padding:12px 15px;border-radius:16px;text-transform:uppercase;font-size:10px;font-weight:1000;letter-spacing:1.1px}
+/* HEADER */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:1000;min-height:92px;padding:14px 7%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(254,254,255,.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(4,34,116,.08);overflow:hidden;
+}
+header::before,header::after{content:"";position:absolute;pointer-events:none;opacity:.14;filter:blur(.5px)}
+header::before{width:34%;height:120px;left:-8%;top:-44px;transform:rotate(-6deg);background:linear-gradient(90deg,transparent 0 3%,rgba(4,34,116,.85) 10% 55%,rgba(4,34,116,.15) 77%,transparent 96%);border-radius:45% 55% 50% 50%}
+header::after{width:28%;height:112px;right:-8%;bottom:-45px;transform:rotate(8deg);background:linear-gradient(90deg,transparent 0 8%,rgba(4,34,116,.12) 20%,rgba(4,34,116,.78) 50% 88%,transparent 98%);border-radius:54% 46% 50% 50%}
+.header-note{position:relative;z-index:2;font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;opacity:.72;min-width:190px}
+.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}
+.logo img{height:62px;width:auto}
+nav{position:relative;z-index:3;display:flex;align-items:center;gap:24px}
+nav a{text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:1.25px}
+.nav-order{background:var(--blue);color:#fff;padding:13px 20px;border-radius:999px;box-shadow:0 12px 25px rgba(4,34,116,.2)}
+.mobile-menu-toggle{display:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(4,34,116,.15);background:#fff;position:relative;z-index:3000;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
+.mobile-menu-toggle span{width:20px;height:2px;background:var(--blue);display:block;border-radius:2px;transition:.25s}
 
-/* order stage */
-.order-stage{background:var(--blue);padding:34px 7% 94px;color:#fff}.order-head{max-width:1240px;margin:0 auto 26px;display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}.order-head .eyebrow{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;font-weight:900;color:rgba(255,255,255,.68);margin-bottom:8px}.order-head h2{font-family:Georgia,serif;font-size:clamp(46px,5vw,72px);line-height:.92;letter-spacing:-2.5px}.order-head p{font-size:16px;line-height:1.6;color:rgba(255,255,255,.78);max-width:600px;padding-top:6px}.urgency{max-width:1240px;margin:0 auto 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:15px 18px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);border-radius:18px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1.1px}.urgency b{color:var(--yellow)}
-.layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:1fr 370px;gap:24px;align-items:start}.order-grid{display:grid;gap:16px}.item{display:grid;grid-template-columns:190px 1fr 210px;gap:20px;align-items:center;background:#fff;color:var(--blue);border-radius:28px;padding:15px;box-shadow:0 20px 48px rgba(0,0,0,.18);transition:.22s}.item:hover{transform:translateY(-4px)}.item-img{height:158px;border-radius:22px;overflow:hidden;background:#ddd}.item-img img{width:100%;height:100%;object-fit:cover}.item.cannoli .item-img img{object-position:5% center}.item h3{font-family:Georgia,serif;font-size:30px;line-height:1}.item p{font-size:13px;line-height:1.5;color:#36436b;margin:9px 0 12px}.meta{display:flex;gap:8px;flex-wrap:wrap}.badge{font-size:9px;text-transform:uppercase;font-weight:900;letter-spacing:1px;background:var(--soft);padding:8px 10px;border-radius:999px}.order-panel{background:var(--soft);border-radius:22px;padding:15px;text-align:center}.price{font-size:24px;font-weight:1000;margin-bottom:10px}.qty-row{display:grid;grid-template-columns:38px 1fr 38px;gap:8px;align-items:center;margin-bottom:10px}.qty-btn{height:38px;border-radius:50%;border:1px solid rgba(4,34,116,.13);background:#fff;color:var(--blue);font-size:20px;cursor:pointer}.qty{width:100%;height:40px;text-align:center;border-radius:12px;border:1px solid rgba(4,34,116,.13);font-size:16px;font-weight:900;color:var(--blue)}.add-btn,.checkout-btn,.clear-btn{width:100%;border:none;border-radius:999px;padding:13px 14px;text-transform:uppercase;font-size:10px;font-weight:1000;letter-spacing:1.1px;cursor:pointer}.add-btn{background:var(--blue);color:#fff}.add-btn:hover,.checkout-btn:hover{transform:translateY(-2px)}
-.cart{position:sticky;top:108px;background:#fff;color:var(--blue);border-radius:30px;padding:23px;box-shadow:0 26px 70px rgba(0,0,0,.22)}.cart-topline{display:flex;justify-content:space-between;align-items:center;gap:12px}.cart h2{font-family:Georgia,serif;font-size:34px}.cart-count{background:var(--soft);padding:8px 10px;border-radius:999px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:1px}.small-note{font-size:11px;line-height:1.45;color:#6b7594;margin-top:8px}.cart-list{display:grid;gap:10px;margin:18px 0}.cart-empty{background:var(--soft);border-radius:16px;padding:16px;line-height:1.45;color:#657090}.cart-row{display:grid;grid-template-columns:1fr auto;gap:8px;background:var(--soft);padding:12px;border-radius:15px}.cart-row strong{display:block;margin-bottom:4px}.cart-row small{color:#657090}.remove-btn{border:none;background:var(--blue);color:#fff;border-radius:999px;width:31px;height:31px;font-weight:1000}.total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(4,34,116,.12);padding-top:15px;font-size:22px;font-weight:1000}.customer-box{margin-top:18px;background:var(--soft);border-radius:20px;padding:15px}.customer-box h3{font-family:Georgia,serif;font-size:23px;margin-bottom:11px}.customer-box input,.customer-box textarea{width:100%;padding:12px;margin-bottom:9px;border-radius:12px;border:1px solid rgba(4,34,116,.12);font:inherit;color:var(--blue);background:#fff}.checkout-btn{background:var(--blue);color:#fff;margin-top:3px}.clear-btn{background:transparent;color:var(--blue);border:1px solid rgba(4,34,116,.18);margin-top:8px}
+/* HERO */
+.hero{min-height:100vh;padding:132px 7% 46px;display:grid;grid-template-columns:.88fr 1.12fr;gap:56px;align-items:center;background:linear-gradient(135deg,#fff 0%,#f6f6f8 54%,#dedede 100%);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;left:-200px;top:100px;background:rgba(4,34,116,.07)}
+.hero-copy{position:relative;z-index:2;max-width:690px}
+.eyebrow{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;font-weight:900;margin-bottom:20px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(58px,7.4vw,118px);line-height:.84;letter-spacing:-5px;margin-bottom:26px}
+.hero h1 .kick{display:inline-block;position:relative}
+.hero h1 .kick::after{content:"";position:absolute;left:0;right:4%;height:10px;bottom:-5px;background:rgba(242,194,48,.9);z-index:-1;transform:rotate(-1deg);border-radius:50%}
+.hero p{font-size:19px;line-height:1.62;max-width:610px;color:#22315f}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:15px 25px;border-radius:999px;text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:1.25px;transition:.22s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 18px 34px rgba(4,34,116,.24)}
+.btn-ghost{border:1px solid rgba(4,34,116,.22);background:rgba(255,255,255,.55);color:var(--blue)}
+.hero-proof{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px}
+.hero-proof span{font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.hero-proof span::before{content:"";width:7px;height:7px;background:var(--yellow);border-radius:50%}
 
-/* extra conversion block */
-.after-order{padding:62px 7%;background:#fff}.after-box{max-width:1240px;margin:auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}.after-photo{height:390px;border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}.after-photo img{width:100%;height:100%;object-fit:cover}.after-copy h2{font-family:Georgia,serif;font-size:clamp(42px,5vw,68px);line-height:.92;letter-spacing:-2px}.after-copy p{font-size:17px;line-height:1.62;color:#34416c;margin-top:18px;max-width:560px}.after-copy strong{display:block;margin-top:18px;text-transform:uppercase;font-size:11px;letter-spacing:1.3px}
-footer{padding:58px 7% 34px;background:var(--dark);color:#fff;display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:38px}footer .foot-logo{height:72px;margin-bottom:16px}footer p{color:rgba(255,255,255,.74);line-height:1.65;max-width:430px;font-size:14px}footer h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:16px}footer a{display:block;color:#fff;text-decoration:none;margin-bottom:11px;font-size:13px;font-weight:900}.footer-bottom{grid-column:1/-1;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;color:rgba(255,255,255,.55)}
-.mobile-cart-jump{display:none}
-@media(max-width:1050px){.layout{grid-template-columns:1fr}.cart{position:relative;top:auto}.order-hero,.after-box{grid-template-columns:1fr}.hero-photo{height:380px}.order-head{grid-template-columns:1fr;gap:16px}}
-@media(max-width:760px){header{min-height:86px;padding:12px 6%;justify-content:flex-end}.header-note{display:none}.logo img{height:56px}nav{position:fixed!important;top:0;left:0;width:100%;height:100dvh;background:#fff;flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:.3s;z-index:2500}nav.is-open{transform:translateX(0)}nav a{font-size:19px}.nav-order{min-width:240px;text-align:center}.mobile-menu-toggle{display:flex}.mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.mobile-menu-toggle.is-open span:nth-child(2){opacity:0}.mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}body.menu-open{overflow:hidden}.order-hero{padding:112px 6% 34px;gap:25px;min-height:auto}.hero-copy h1{font-size:clamp(52px,15vw,74px);letter-spacing:-3px}.hero-copy p{font-size:16px}.hero-photo{height:320px}.order-stage{padding:28px 6% 86px}.item{grid-template-columns:1fr;gap:13px}.item-img{height:260px}.order-panel{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}.price{margin:0}.qty-row{margin:0}.add-btn{grid-column:1/-1}.after-order{padding:52px 6%}.after-photo{height:320px}footer{grid-template-columns:1fr;padding:52px 6% 110px}.mobile-cart-jump{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:1600;background:var(--yellow);color:var(--blue);border-radius:999px;min-height:58px;align-items:center;justify-content:center;text-decoration:none;text-transform:uppercase;font-size:12px;font-weight:1000;letter-spacing:1.2px;box-shadow:0 20px 48px rgba(0,0,0,.25)}}
+.hero-visual{position:relative;height:min(70vw,690px);min-height:540px}
+.hero-photo-main{position:absolute;inset:0 0 0 11%;border-radius:42px;overflow:hidden;box-shadow:0 34px 90px rgba(0,0,0,.22);background:#ddd}
+.hero-photo-main img{width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.hero-photo-small{position:absolute;border:7px solid #fff;overflow:hidden;box-shadow:0 24px 58px rgba(0,0,0,.18);background:#fff}
+.hero-photo-small img{width:100%;height:100%;object-fit:cover}
+.hero-photo-small.one{width:34%;height:34%;left:0;bottom:6%;border-radius:30px;transform:rotate(-4deg)}
+.hero-photo-small.two{width:31%;height:29%;right:-2%;top:7%;border-radius:28px;transform:rotate(3deg)}
+.hero-sticker{position:absolute;left:5%;top:7%;z-index:5;background:var(--yellow);color:var(--blue);width:132px;height:132px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;line-height:1.05;font-weight:1000;text-transform:uppercase;letter-spacing:1px;transform:rotate(-8deg);box-shadow:0 18px 36px rgba(0,0,0,.14)}
+
+/* INFO STRIP */
+.info-strip{background:var(--dark);color:#fff;padding:17px 7%;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info-strip div{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;font-size:11px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase}
+.info-strip b{color:var(--yellow)}
+
+/* DROP */
+.drop-section{background:var(--blue);color:#fff;padding:42px 7% 92px}
+.drop-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center;margin-bottom:36px}
+.drop-kicker{font-size:11px;font-weight:900;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:9px}
+.drop-head h2{font-family:Georgia,serif;font-size:clamp(48px,5vw,78px);letter-spacing:-2.5px;line-height:.92}
+.drop-copy{font-size:16px;line-height:1.6;color:rgba(255,255,255,.8);max-width:560px;margin-top:14px}
+.countdown-wrap{justify-self:end;width:min(100%,520px)}
+.countdown-label{text-align:right;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:10px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.count-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:15px 8px;text-align:center;backdrop-filter:blur(8px)}
+.count-box b{font-family:Georgia,serif;font-size:clamp(28px,3vw,44px);line-height:.9;display:block}.count-box span{font-size:8px;text-transform:uppercase;letter-spacing:1.45px;opacity:.65;display:block;margin-top:8px;font-weight:900}
+.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.product-card{background:#fff;color:var(--blue);border-radius:28px;overflow:hidden;box-shadow:0 22px 56px rgba(0,0,0,.19);position:relative;transition:.25s}
+.product-card:hover{transform:translateY(-7px)}
+.product-img{height:230px;overflow:hidden;background:#ddd}.product-img img{width:100%;height:100%;object-fit:cover;transition:.35s}.product-card:hover .product-img img{transform:scale(1.04)}
+.product-card:nth-child(4) .product-img img{object-position:5% 50%}
+.product-body{padding:18px}.product-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.product-body h3{font-family:Georgia,serif;font-size:24px;line-height:1}.product-price{font-size:20px;font-weight:1000}.product-body p{font-size:13px;line-height:1.5;color:#33416b;min-height:58px;margin:12px 0 15px}
+.product-tag{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;background:var(--soft);padding:8px 10px;border-radius:999px;margin-bottom:12px}
+.product-card .btn{width:100%;min-height:46px;padding:13px 15px}
+
+/* MID CTA */
+.mid-cta{padding:76px 7%;background:#fff}
+.mid-cta-box{max-width:1320px;margin:auto;background:linear-gradient(135deg,#f2f3f7 0%,#fff 60%);border-radius:38px;display:grid;grid-template-columns:1fr .95fr;gap:36px;align-items:center;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(4,34,116,.07)}
+.mid-copy{padding:54px}.mid-copy .eyebrow{margin-bottom:14px}.mid-copy h2{font-family:Georgia,serif;font-size:clamp(44px,5vw,76px);line-height:.92;letter-spacing:-2.5px}.mid-copy p{font-size:17px;line-height:1.6;color:#33416b;margin:18px 0 26px;max-width:560px}
+.mid-photo{height:480px;position:relative}.mid-photo img{width:100%;height:100%;object-fit:cover}.mid-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.18),transparent 35%)}
+
+/* STORY / GALLERY */
+.story{padding:86px 7%;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;background:var(--soft)}
+.story-photo{height:640px;border-radius:38px;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.15)}.story-photo img{width:100%;height:100%;object-fit:cover}
+.story h2{font-family:Georgia,serif;font-size:clamp(46px,5vw,76px);line-height:.92;letter-spacing:-2.5px;margin-bottom:22px}.story p{font-size:18px;line-height:1.72;color:#34416c;max-width:640px}.story-sign{margin-top:24px;font-weight:1000;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:22px}.gallery img:first-child{height:300px;grid-row:auto}
+
+/* FOOTER */
+footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:38px}footer .foot-logo{height:74px;margin-bottom:16px}footer p{color:rgba(255,255,255,.74);line-height:1.65;max-width:430px;font-size:14px}footer h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:16px}footer a{display:block;color:#fff;text-decoration:none;margin-bottom:11px;font-size:13px;font-weight:900}.footer-bottom{grid-column:1/-1;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;color:rgba(255,255,255,.55)}
+.mobile-order-bar{display:none}
+
+@media(max-width:1180px){.products{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:980px){.hero{grid-template-columns:1fr;padding-top:128px}.hero-visual{height:620px}.drop-head,.mid-cta-box,.story{grid-template-columns:1fr}.countdown-wrap{justify-self:start}.countdown-label{text-align:left}.mid-photo{height:400px}.story-photo{height:500px}}
+@media(max-width:760px){
+  header{min-height:86px;padding:12px 6%;justify-content:flex-end}.header-note{display:none}.logo img{height:56px}nav{position:fixed!important;top:0;left:0;width:100%;height:100dvh;background:#fff;flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:.3s;z-index:2500}nav.is-open{transform:translateX(0)}nav a{font-size:19px}.nav-order{min-width:240px;text-align:center}.mobile-menu-toggle{display:flex}.mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.mobile-menu-toggle.is-open span:nth-child(2){opacity:0}.mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}body.menu-open{overflow:hidden}
+  .hero{min-height:auto;padding:122px 6% 42px;gap:28px}.hero h1{font-size:clamp(52px,16vw,76px);letter-spacing:-3.5px}.hero p{font-size:17px}.hero-actions .btn{width:100%}.hero-visual{height:500px;min-height:0}.hero-photo-main{left:5%;right:0;border-radius:28px}.hero-photo-small.one{width:38%;height:30%;bottom:3%;border-width:5px}.hero-photo-small.two{width:35%;height:28%;top:5%;border-width:5px}.hero-sticker{width:105px;height:105px;font-size:11px;left:0;top:5%}
+  .info-strip{grid-template-columns:1fr;gap:10px;padding:16px 6%}.info-strip div{justify-content:flex-start}
+  .drop-section{padding:30px 6% 74px}.drop-head{gap:24px}.drop-copy{font-size:15px}.countdown{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:1fr}.product-img{height:280px}
+  .mid-cta{padding:55px 6%}.mid-copy{padding:34px}.mid-photo{height:320px}.story{padding:65px 6%;gap:32px}.story-photo{height:430px}.gallery{grid-template-columns:1fr}.gallery img,.gallery img:first-child{height:280px;grid-column:auto;grid-row:auto}
+  footer{grid-template-columns:1fr;padding:56px 6% 100px}.mobile-order-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:1600;background:var(--yellow);color:var(--blue);border-radius:999px;min-height:58px;align-items:center;justify-content:center;text-decoration:none;text-transform:uppercase;font-size:12px;font-weight:1000;letter-spacing:1.2px;box-shadow:0 20px 48px rgba(0,0,0,.25)}
+}
 </style>
 </head>
 <body>
-<a class="mobile-cart-jump" href="#cart">View cart & finish order</a>
 <header>
   <div class="header-note">Italian tradition • Canberra soul</div>
   <a class="logo" href="index.html"><img src="logo2.png" alt="Sapori Lab"/></a>
   <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  <nav id="mainNav"><a href="index.html#drop">Next Menu</a><a href="index.html#story">Our Story</a><a class="nav-order" href="order.html">Order</a></nav>
+  <nav id="mainNav">
+    <a href="#drop">Next Menu</a>
+    <a href="#story">Our Story</a>
+    <a class="nav-order" href="order.html">Order Now</a>
+  </nav>
 </header>
 
-<section class="order-hero">
+<section class="hero">
   <div class="hero-copy">
-    <div class="eyebrow">Sapori Lab • Fortnightly orders</div>
-    <h1>Get yours<br/>while it's available.</h1>
-    <p>Choose your favourites, add the quantity and send the request. We confirm availability and send your secure payment link.</p>
-    <div class="hero-pills"><span class="hero-pill">Limited quantities</span><span class="hero-pill">Saturday pickup</span><span class="hero-pill">2 Grazier Lane, Belconnen</span></div>
+    <div class="eyebrow">Modern Italian Bakery • Belconnen</div>
+    <h1>Your diet<br/>can <span class="kick">wait.</span></h1>
+    <p>Small-batch Italian sweet and savoury favourites, handmade in Canberra and released every two weeks in limited quantities.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="order.html">Order the next menu</a>
+      <a class="btn btn-ghost" href="#drop">See what’s coming</a>
+    </div>
+    <div class="hero-proof">
+      <span>Limited batches</span><span>Saturday pickup</span><span>Made fresh</span>
+    </div>
   </div>
-  <div class="hero-photo"><img src="matcha.jpg" alt="Sapori Lab maritozzi and cannoli"/><div class="hero-photo-tag">Made fresh • small batch</div></div>
+  <div class="hero-visual">
+    <div class="hero-photo-main"><img src="maritozzi.png" alt="Sapori Lab tiramisu"/></div>
+    <div class="hero-photo-small one"><img src="cannoli-closeup.jpg" alt="Sapori Lab maritozzi and cannoli"/></div>
+    <div class="hero-photo-small two"><img src="sfogliatelle.png" alt="Sapori Lab sfogliatelle"/></div>
+    <div class="hero-sticker">Limited<br/>quantities<br/>only</div>
+  </div>
 </section>
 
-<main class="order-stage">
-  <div class="order-head"><div><div class="eyebrow">Upcoming menu</div><h2>Choose your favourites.</h2></div><p>We open every second Saturday, with orders closing at 1PM on the Thursday before. Pick up your favourites from 2 Grazier Lane, Belconnen</p></div>
-  <div class="urgency"><span><b>Next release closing time:</b> Thursday 27 August • 1PM</span><span>When a batch sells out, ordering closes for that item.</span></div>
-  <div class="layout">
-    <section class="order-grid" id="order-grid">
-      <article class="item"><div class="item-img"><img src="tiramisu.png" alt="Tiramisù"/></div><div><h3>Tiramisù</h3><p>Espresso-soaked ladyfingers, silky mascarpone and rich cocoa.</p><div class="meta"><span class="badge">Limited</span><span class="badge">Small batch</span></div></div><div class="order-panel"><div class="price">$14</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('qty-tiramisu',-1)">−</button><input class="qty" id="qty-tiramisu" type="number" value="1" min="1"/><button class="qty-btn" onclick="changeQty('qty-tiramisu',1)">+</button></div><button class="add-btn" onclick="addToCart('Tiramisù',14,'qty-tiramisu')">Add to cart</button></div></article>
-      <article class="item"><div class="item-img"><img src="sfogliatelle.png" alt="Sfogliatelle"/></div><div><h3>Sfogliatelle</h3><p>Golden flaky layers filled with sweet ricotta and citrus.</p><div class="meta"><span class="badge">Fresh baked</span><span class="badge">Small batch</span></div></div><div class="order-panel"><div class="price">$10</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('qty-sfogliatelle',-1)">−</button><input class="qty" id="qty-sfogliatelle" type="number" value="1" min="1"/><button class="qty-btn" onclick="changeQty('qty-sfogliatelle',1)">+</button></div><button class="add-btn" onclick="addToCart('Sfogliatelle',10,'qty-sfogliatelle')">Add to cart</button></div></article>
-      <article class="item"><div class="item-img"><img src="maritozzi.png" alt="Maritozzi"/></div><div><h3>Maritozzi</h3><p>Soft Italian buns filled generously with fresh cream.</p><div class="meta"><span class="badge">Cream filled</span><span class="badge">Small batch</span></div></div><div class="order-panel"><div class="price">$14</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('qty-maritozzi',-1)">−</button><input class="qty" id="qty-maritozzi" type="number" value="1" min="1"/><button class="qty-btn" onclick="changeQty('qty-maritozzi',1)">+</button></div><button class="add-btn" onclick="addToCart('Maritozzi',14,'qty-maritozzi')">Add to cart</button></div></article>
-      <article class="item cannoli"><div class="item-img"><img src="maritozzi-closeup.jpg" alt="Cannoli"/></div><div><h3>Cannoli</h3><p>Crispy shells, silky ricotta filling and authentic Italian flavour.</p><div class="meta"><span class="badge">Popular</span><span class="badge">Small batch</span></div></div><div class="order-panel"><div class="price">$9</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('qty-cannoli',-1)">−</button><input class="qty" id="qty-cannoli" type="number" value="1" min="1"/><button class="qty-btn" onclick="changeQty('qty-cannoli',1)">+</button></div><button class="add-btn" onclick="addToCart('Cannoli',9,'qty-cannoli')">Add to cart</button></div></article>
-      <article class="item"><div class="item-img"><img src="stall.png" alt="Croque Monsieur"/></div><div><h3>Croque Monsieur</h3><p>Golden toasted bread layered with ham, cheese and creamy béchamel.</p><div class="meta"><span class="badge">Savoury</span><span class="badge">Small batch</span></div></div><div class="order-panel"><div class="price">$15</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('qty-croque',-1)">−</button><input class="qty" id="qty-croque" type="number" value="1" min="1"/><button class="qty-btn" onclick="changeQty('qty-croque',1)">+</button></div><button class="add-btn" onclick="addToCart('Croque Monsieur',15,'qty-croque')">Add to cart</button></div></article>
-    </section>
+<div class="info-strip">
+  <div><b>Next release</b> Thu 3 Sep • 1PM</div>
+  <div><b>Pickup</b> Saturday • 2 Grazier Lane, Belconnen</div>
+  <div><b>Small batch</b> When it’s gone, it’s gone</div>
+</div>
 
-    <aside class="cart" id="cart">
-      <div class="cart-topline"><h2>Your Cart</h2><div class="cart-count" id="cart-count">0 items</div></div>
-      <p class="small-note">Add your favourites, then send the request below.</p>
-      <div class="cart-list" id="cart-list"><div class="cart-empty">Your cart is empty. Start with the one you’re already thinking about.</div></div>
-      <div class="total"><span>Total</span><span id="cart-total">$0</span></div>
-      <div class="customer-box"><h3>Your details</h3><input id="customer-name" placeholder="Full name"/><input id="customer-phone" placeholder="Phone number" type="tel"/><input id="customer-email" placeholder="Email address" type="email"/><input id="customer-method" value="Pickup — 2 Grazier Lane, Belconnen" readonly/><textarea id="customer-notes" rows="3" placeholder="Notes or allergy information..."></textarea><button class="checkout-btn" onclick="sendEmailOrder()">Send order request</button><button class="clear-btn" onclick="clearCart()">Clear cart</button><div class="small-note">We’ll confirm availability before payment.</div></div>
-    </aside>
+<section class="drop-section" id="drop">
+  <div class="drop-head">
+    <div>
+      <div class="drop-kicker">Upcoming menu</div>
+      <h2>Pick your favourites.</h2>
+      <p class="drop-copy">Freshly made in limited quantities. New selections are released every second Thursday at 1PM.</p>
+    </div>
+    <div class="countdown-wrap">
+      <div class="countdown-label">Next menu opens in</div>
+      <div class="countdown">
+        <div class="count-box"><b id="days">00</b><span>Days</span></div>
+        <div class="count-box"><b id="hours">00</b><span>Hours</span></div>
+        <div class="count-box"><b id="minutes">00</b><span>Minutes</span></div>
+        <div class="count-box"><b id="seconds">00</b><span>Seconds</span></div>
+      </div>
+    </div>
   </div>
-</main>
 
-<section class="after-order"><div class="after-box"><div class="after-photo"><img src="tiramisu-batch.jpg" alt="Sapori Lab tiramisu batch"/></div><div class="after-copy"><h2>Small batches for a reason.</h2><p>We produce around confirmed orders so everything stays fresh and the menu stays special. Once a batch is allocated, it’s gone until another release.</p><strong>Italian Tradition. Canberra Soul.</strong></div></div></section>
+  <div class="products">
+    <article class="product-card">
+      <div class="product-img"><img src="tiramisu.png" alt="Tiramisù"/></div>
+      <div class="product-body"><span class="product-tag">Limited</span><div class="product-top"><h3>Tiramisù</h3><div class="product-price">$14</div></div><p>Espresso-soaked ladyfingers, silky mascarpone and rich cocoa.</p><a class="btn btn-primary" href="order.html">Order Tiramisù</a></div>
+    </article>
+    <article class="product-card">
+      <div class="product-img"><img src="sfogliatelle.png" alt="Sfogliatelle"/></div>
+      <div class="product-body"><span class="product-tag">Fresh baked</span><div class="product-top"><h3>Sfogliatelle</h3><div class="product-price">$10</div></div><p>Golden flaky layers filled with sweet ricotta and citrus.</p><a class="btn btn-primary" href="order.html">Order Sfogliatelle</a></div>
+    </article>
+    <article class="product-card">
+      <div class="product-img"><img src="maritozzi.png" alt="Maritozzi"/></div>
+      <div class="product-body"><span class="product-tag">Cream filled</span><div class="product-top"><h3>Maritozzi</h3><div class="product-price">$12</div></div><p>Soft Italian buns filled generously with fresh cream.</p><a class="btn btn-primary" href="order.html">Order Maritozzi</a></div>
+    </article>
+    <article class="product-card">
+      <div class="product-img"><img src="cannoli-closeup.jpg" alt="Cannoli"/></div>
+      <div class="product-body"><span class="product-tag">Popular</span><div class="product-top"><h3>Cannoli</h3><div class="product-price">$8</div></div><p>Crispy shells, silky ricotta filling and authentic Italian flavour.</p><a class="btn btn-primary" href="order.html">Order Cannoli</a></div>
+    </article>
+    <article class="product-card">
+      <div class="product-img"><img src="croquemush.jpg" alt="Croque Monsieur"/></div>
+      <div class="product-body"><span class="product-tag">Savoury</span><div class="product-top"><h3>Croque Monsieur</h3><div class="product-price">$15</div></div><p>Golden toasted bread layered with mushrooms, caramalized onions, cheese and creamy béchamel.</p><a class="btn btn-primary" href="order.html">Order Savoury</a></div>
+    </article>
+  </div>
+</section>
 
-<footer><div><img class="foot-logo" src="logo3.png" alt="Sapori Lab"/><p>Modern Italian bakery culture, fortnightly releases and limited small-batch favourites from Belconnen, Canberra.</p></div><div><h4>Explore</h4><a href="index.html#drop">Upcoming Menu</a><a href="index.html#story">Our Story</a><a href="order.html">Order Online</a></div><div><h4>Connect</h4><a href="https://www.instagram.com/saporilab/">Instagram</a><a href="https://www.facebook.com/sapori.lab">Facebook</a><a href="mailto:info@saporilab.com.au">info@saporilab.com.au</a></div><div class="footer-bottom">© 2026 Sapori Lab • Small-batch Italian bakery • Belconnen, Canberra</div></footer>
+<section class="mid-cta">
+  <div class="mid-cta-box">
+    <div class="mid-copy">
+      <div class="eyebrow">Made to disappear</div>
+      <h2>Seen something you want?</h2>
+      <p>Don’t leave it sitting in your screenshots. Quantities are limited and each menu is produced fresh for Saturday pickup.</p>
+      <a class="btn btn-primary" href="order.html">Build my order</a>
+    </div>
+    <div class="mid-photo"><img src="tiramisu2.jpg" alt="Sapori Lab savoury maritozzi"/></div>
+  </div>
+</section>
 
+<section class="story" id="story">
+  <div class="story-photo"><img src="stall.png" alt="Sapori Lab market stall"/></div>
+  <div>
+    <div class="eyebrow">Born in Italy. Shaped in Australia.</div>
+    <h2>Italian bakery culture, made modern.</h2>
+    <p>We grew up in Italy surrounded by the flavours, traditions and rituals of Italian food, then brought that heritage with us to Canberra. Sapori Lab keeps the soul of those flavours and gives them a modern, playful edge — handmade, fresh and made to be shared.</p>
+    <div class="story-sign">Italian Tradition. Canberra Soul.</div>
+    <div class="gallery">
+      <img src="catering full.jpg" alt="Sapori Lab tiramisu batch"/>
+      <img src="tiramisu cake special.jpg" alt="Sapori Lab tiramisu cake"/>
+      <img src="maritozzi.png" alt="Sapori Lab maritozzi"/>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><img class="foot-logo" src="logo3.png" alt="Sapori Lab"/><p>Modern Italian bakery culture, fortnightly releases and limited small-batch favourites from Belconnen, Canberra.</p></div>
+  <div><h4>Explore</h4><a href="#drop">Upcoming Menu</a><a href="#story">Our Story</a><a href="order.html">Order Online</a></div>
+  <div><h4>Connect</h4><a href="https://www.instagram.com/saporilab/">Instagram</a><a href="https://www.facebook.com/sapori.lab">Facebook</a><a href="mailto:info@saporilab.com.au">info@saporilab.com.au</a></div>
+  <div class="footer-bottom">© 2026 Sapori Lab • Small-batch Italian bakery • Belconnen, Canberra</div>
+</footer>
+
+<a class="mobile-order-bar" href="order.html">Order the next menu</a>
+
+<script>
+function getNextFortnightlyDropAt1PM(){const now=new Date();const target=new Date(2026,8,3,13,0,0,0);while(target<=now){target.setDate(target.getDate()+14)}return target}
+function updateCountdown(){const distance=getNextFortnightlyDropAt1PM().getTime()-Date.now();const safe=Math.max(distance,0);const d=Math.floor(safe/86400000),h=Math.floor((safe%86400000)/3600000),m=Math.floor((safe%3600000)/60000),s=Math.floor((safe%60000)/1000);document.getElementById('days').textContent=String(d).padStart(2,'0');document.getElementById('hours').textContent=String(h).padStart(2,'0');document.getElementById('minutes').textContent=String(m).padStart(2,'0');document.getElementById('seconds').textContent=String(s).padStart(2,'0')}
+updateCountdown();setInterval(updateCountdown,1000);
+const btn=document.getElementById('hamburgerBtn'),nav=document.getElementById('mainNav');if(btn&&nav){btn.addEventListener('click',()=>{btn.classList.toggle('is-open');nav.classList.toggle('is-open');document.body.classList.toggle('menu-open');btn.setAttribute('aria-expanded',nav.classList.contains('is-open'))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{btn.classList.remove('is-open');nav.classList.remove('is-open');document.body.classList.remove('menu-open')}))}
+</script>
 
 <script>
 /* =========================================================
-   MENU SYNC RECEIVER
-   Priority:
-   1) menu data passed directly by index.html in the URL (works locally too)
-   2) last menu saved by index.html in localStorage
-   3) hosted fallback: read index.html
-   4) if all fail, keep the built-in static menu already in this file
+   SAPORI MENU HANDOFF
+   index.html is the source of truth for products.
+   Every Order link carries the CURRENT visible menu to order.html,
+   so this also works when previewing files locally (file://).
    ========================================================= */
 (function(){
-  function slugify(name){
-    return String(name || 'product').toLowerCase().normalize('NFD')
-      .replace(/[\u0300-\u036f]/g,'')
-      .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-  }
-
-  function readProductsFromIndexDocument(doc){
-    return Array.from(doc.querySelectorAll('.product-card')).map(function(card, index){
+  function readMenuFromIndex(){
+    return Array.from(document.querySelectorAll('.product-card')).map(function(card, index){
       var nameEl = card.querySelector('.product-top h3, .product-body h3, h3');
       var priceEl = card.querySelector('.product-price, .price');
       var descEl = card.querySelector('.product-body p, .product-content p');
       var tagEl = card.querySelector('.product-tag, .badge');
       var imgEl = card.querySelector('.product-img img, .product-image img, img');
       var image = imgEl ? (imgEl.getAttribute('src') || '') : '';
+
       if(!image){
         var bgEl = card.querySelector('.product-image');
         var style = bgEl ? (bgEl.getAttribute('style') || '') : '';
         var match = style.match(/url\(['\"]?([^'\")]+)['\"]?\)/i);
         if(match) image = match[1];
       }
+
       var priceText = priceEl ? priceEl.textContent.trim() : '$0';
+      var price = parseFloat(priceText.replace(/[^0-9.]/g,'')) || 0;
+
       return {
         name: nameEl ? nameEl.textContent.trim() : ('Product ' + (index + 1)),
-        price: parseFloat(priceText.replace(/[^0-9.]/g,'')) || 0,
+        price: price,
         priceText: priceText,
         description: descEl ? descEl.textContent.trim() : '',
         image: image,
@@ -115,130 +283,24 @@ footer{padding:58px 7% 34px;background:var(--dark);color:#fff;display:grid;grid-
     }).filter(function(item){ return item.name && item.image; });
   }
 
-  function renderSyncedProducts(products){
-    var grid = document.getElementById('order-grid');
-    if(!grid || !Array.isArray(products) || !products.length) return false;
-    grid.innerHTML = '';
+  function syncOrderLinks(){
+    var products = readMenuFromIndex();
+    if(!products.length) return;
 
-    products.forEach(function(product){
-      var id = slugify(product.name);
-      var article = document.createElement('article');
-      article.className = 'item' + (String(product.name).toLowerCase().includes('cannoli') ? ' cannoli' : '');
+    var payload = JSON.stringify(products);
+    var orderHref = 'order.html?menu=' + encodeURIComponent(payload);
 
-      var imageWrap = document.createElement('div');
-      imageWrap.className = 'item-img';
-      var image = document.createElement('img');
-      image.src = product.image;
-      image.alt = product.name;
-      imageWrap.appendChild(image);
+    try { localStorage.setItem('saporiMenuV1', payload); } catch(e) {}
 
-      var copy = document.createElement('div');
-      var title = document.createElement('h3');
-      title.textContent = product.name;
-      var desc = document.createElement('p');
-      desc.textContent = product.description || '';
-      var meta = document.createElement('div');
-      meta.className = 'meta';
-      var tag = document.createElement('span');
-      tag.className = 'badge';
-      tag.textContent = product.tag || 'Small batch';
-      var batch = document.createElement('span');
-      batch.className = 'badge';
-      batch.textContent = 'Small batch';
-      meta.appendChild(tag);
-      if(String(tag.textContent).toLowerCase() !== 'small batch') meta.appendChild(batch);
-      copy.appendChild(title); copy.appendChild(desc); copy.appendChild(meta);
-
-      var panel = document.createElement('div');
-      panel.className = 'order-panel';
-      var price = document.createElement('div');
-      price.className = 'price';
-      price.textContent = product.priceText || ('$' + product.price);
-      var qtyRow = document.createElement('div');
-      qtyRow.className = 'qty-row';
-      var qtyId = 'qty-' + id;
-      var minus = document.createElement('button');
-      minus.className = 'qty-btn'; minus.type = 'button'; minus.textContent = '−';
-      minus.addEventListener('click', function(){ changeQty(qtyId,-1); });
-      var qty = document.createElement('input');
-      qty.className = 'qty'; qty.id = qtyId; qty.type = 'number'; qty.value = '1'; qty.min = '1';
-      var plus = document.createElement('button');
-      plus.className = 'qty-btn'; plus.type = 'button'; plus.textContent = '+';
-      plus.addEventListener('click', function(){ changeQty(qtyId,1); });
-      qtyRow.appendChild(minus); qtyRow.appendChild(qty); qtyRow.appendChild(plus);
-      var add = document.createElement('button');
-      add.className = 'add-btn'; add.type = 'button'; add.textContent = 'Add to cart';
-      add.addEventListener('click', function(){ addToCart(product.name, Number(product.price) || 0, qtyId); });
-      panel.appendChild(price); panel.appendChild(qtyRow); panel.appendChild(add);
-
-      article.appendChild(imageWrap); article.appendChild(copy); article.appendChild(panel);
-      grid.appendChild(article);
+    document.querySelectorAll('a[href="order.html"], a[href^="order.html?"]').forEach(function(link){
+      link.setAttribute('href', orderHref);
     });
-    return true;
   }
 
-  function validMenu(data){
-    return Array.isArray(data) && data.length && data.every(function(p){ return p && p.name; });
-  }
-
-  async function loadMenu(){
-    var params = new URLSearchParams(window.location.search);
-    var raw = params.get('menu');
-
-    if(raw){
-      try{
-        var fromUrl = JSON.parse(raw);
-        if(validMenu(fromUrl)){
-          try { localStorage.setItem('saporiMenuV1', JSON.stringify(fromUrl)); } catch(e) {}
-          renderSyncedProducts(fromUrl);
-          return;
-        }
-      }catch(e){ console.warn('Sapori menu URL data could not be read', e); }
-    }
-
-    try{
-      var saved = localStorage.getItem('saporiMenuV1');
-      if(saved){
-        var fromStorage = JSON.parse(saved);
-        if(validMenu(fromStorage)){
-          renderSyncedProducts(fromStorage);
-          return;
-        }
-      }
-    }catch(e){}
-
-    if(location.protocol === 'http:' || location.protocol === 'https:'){
-      try{
-        var response = await fetch('./index.html', {cache:'no-store'});
-        if(response.ok){
-          var html = await response.text();
-          var doc = new DOMParser().parseFromString(html,'text/html');
-          var fromIndex = readProductsFromIndexDocument(doc);
-          if(validMenu(fromIndex)){
-            try { localStorage.setItem('saporiMenuV1', JSON.stringify(fromIndex)); } catch(e) {}
-            renderSyncedProducts(fromIndex);
-            return;
-          }
-        }
-      }catch(e){ console.warn('Hosted index fallback failed', e); }
-    }
-
-    console.warn('Sapori menu sync fallback: using the static menu inside order.html');
-  }
-
-  loadMenu();
+  syncOrderLinks();
+  window.addEventListener('pageshow', syncOrderLinks);
 })();
 </script>
 
-<script>
-let cart=[];
-function changeQty(id,change){const input=document.getElementById(id);let value=parseInt(input.value||'1',10)+change;if(value<1)value=1;input.value=value}
-function addToCart(name,price,qtyId){const qty=parseInt(document.getElementById(qtyId).value||'1',10);const existing=cart.find(i=>i.name===name);if(existing)existing.qty+=qty;else cart.push({name,price,qty});renderCart();const c=document.getElementById('cart');if(c)c.animate([{transform:'scale(1)'},{transform:'scale(1.012)'},{transform:'scale(1)'}],{duration:260,easing:'ease-out'})}
-function removeFromCart(name){cart=cart.filter(i=>i.name!==name);renderCart()}function clearCart(){cart=[];renderCart()}
-function renderCart(){const list=document.getElementById('cart-list'),totalEl=document.getElementById('cart-total'),countEl=document.getElementById('cart-count');const qty=cart.reduce((s,i)=>s+i.qty,0);countEl.textContent=qty+(qty===1?' item':' items');if(!cart.length){list.innerHTML='<div class="cart-empty">Your cart is empty. Start with the one you’re already thinking about.</div>';totalEl.textContent='$0';return}let total=0;list.innerHTML='';cart.forEach(item=>{const line=item.price*item.qty;total+=line;const row=document.createElement('div');row.className='cart-row';row.innerHTML=`<div><strong>${item.name}</strong><small>${item.qty} × $${item.price} = $${line}</small></div><button class="remove-btn" onclick="removeFromCart('${item.name}')">×</button>`;list.appendChild(row)});totalEl.textContent='$'+total}
-function buildOrderText(){const name=document.getElementById('customer-name').value.trim(),phone=document.getElementById('customer-phone').value.trim(),email=document.getElementById('customer-email').value.trim(),method=document.getElementById('customer-method').value,notes=document.getElementById('customer-notes').value.trim();if(!cart.length){alert('Please add at least one item to your cart.');return null}let total=0;const items=cart.map(item=>{const line=item.price*item.qty;total+=line;return `- ${item.name}: ${item.qty} x $${item.price} = $${line}`}).join('%0D%0A');return `Sapori Lab Order Request%0D%0A%0D%0AItems:%0D%0A${items}%0D%0A%0D%0ATotal: $${total}%0D%0A%0D%0ACustomer Details:%0D%0AName: ${encodeURIComponent(name)}%0D%0APhone: ${encodeURIComponent(phone)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AOrder method: ${encodeURIComponent(method)}%0D%0ANotes: ${encodeURIComponent(notes)}%0D%0A%0D%0APlease confirm availability and send payment link.`}
-function sendEmailOrder(){const text=buildOrderText();if(!text)return;window.location.href=`mailto:info@saporilab.com.au?subject=${encodeURIComponent('Sapori Lab Order Request')}&body=${text}`}
-const btn=document.getElementById('hamburgerBtn'),nav=document.getElementById('mainNav');if(btn&&nav){btn.addEventListener('click',()=>{btn.classList.toggle('is-open');nav.classList.toggle('is-open');document.body.classList.toggle('menu-open');btn.setAttribute('aria-expanded',nav.classList.contains('is-open'))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{btn.classList.remove('is-open');nav.classList.remove('is-open');document.body.classList.remove('menu-open')}))}
-</script>
 </body>
 </html>
