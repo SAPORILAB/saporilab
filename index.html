@@ -83,13 +83,13 @@ nav a{text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:9
 .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .count-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:15px 8px;text-align:center;backdrop-filter:blur(8px)}
 .count-box b{font-family:Georgia,serif;font-size:clamp(28px,3vw,44px);line-height:.9;display:block}.count-box span{font-size:8px;text-transform:uppercase;letter-spacing:1.45px;opacity:.65;display:block;margin-top:8px;font-weight:900}
-.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .product-card{background:#fff;color:var(--blue);border-radius:28px;overflow:hidden;box-shadow:0 22px 56px rgba(0,0,0,.19);position:relative;transition:.25s}
 .product-card:hover{transform:translateY(-7px)}
-.product-img{height:230px;overflow:hidden;background:#ddd}.product-img img{width:100%;height:100%;object-fit:cover;transition:.35s}.product-card:hover .product-img img{transform:scale(1.04)}
+.product-img{height:270px;overflow:hidden;background:#ddd}.product-img img{width:100%;height:100%;object-fit:cover;transition:.35s}.product-card:hover .product-img img{transform:scale(1.04)}
 .product-card:nth-child(4) .product-img img{object-position:5% 50%}
-.product-body{padding:18px}.product-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.product-body h3{font-family:Georgia,serif;font-size:24px;line-height:1}.product-price{font-size:20px;font-weight:1000}.product-body p{font-size:13px;line-height:1.5;color:#33416b;min-height:58px;margin:12px 0 15px}
+.product-body{padding:22px}.product-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.product-body h3{font-family:Georgia,serif;font-size:27px;line-height:1}.product-price{font-size:22px;font-weight:1000}.product-body p{font-size:13px;line-height:1.5;color:#33416b;min-height:58px;margin:12px 0 15px}
 .product-tag{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;background:var(--soft);padding:8px 10px;border-radius:999px;margin-bottom:12px}
 .product-card .btn{width:100%;min-height:46px;padding:13px 15px}
 
@@ -109,7 +109,7 @@ nav a{text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:9
 footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:38px}footer .foot-logo{height:74px;margin-bottom:16px}footer p{color:rgba(255,255,255,.74);line-height:1.65;max-width:430px;font-size:14px}footer h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:16px}footer a{display:block;color:#fff;text-decoration:none;margin-bottom:11px;font-size:13px;font-weight:900}.footer-bottom{grid-column:1/-1;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;color:rgba(255,255,255,.55)}
 .mobile-order-bar{display:none}
 
-@media(max-width:1180px){.products{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1180px){.products{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:980px){.hero{grid-template-columns:1fr;padding-top:128px}.hero-visual{height:620px}.drop-head,.mid-cta-box,.story{grid-template-columns:1fr}.countdown-wrap{justify-self:start}.countdown-label{text-align:left}.mid-photo{height:400px}.story-photo{height:500px}}
 @media(max-width:760px){
   header{min-height:86px;padding:12px 6%;justify-content:flex-end}.header-note{display:none}.logo img{height:56px}nav{position:fixed!important;top:0;left:0;width:100%;height:100dvh;background:#fff;flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:.3s;z-index:2500}nav.is-open{transform:translateX(0)}nav a{font-size:19px}.nav-order{min-width:240px;text-align:center}.mobile-menu-toggle{display:flex}.mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.mobile-menu-toggle.is-open span:nth-child(2){opacity:0}.mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}body.menu-open{overflow:hidden}
@@ -155,7 +155,7 @@ footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-
 </section>
 
 <div class="info-strip">
-  <div><b>Next release</b> Sat 29th August • 8AM - 12.30PM</div>
+  <div><b>Next release</b> Thu 3 Sep • 1PM</div>
   <div><b>Pickup</b> Saturday • 2 Grazier Lane, Belconnen</div>
   <div><b>Small batch</b> When it’s gone, it’s gone</div>
 </div>
@@ -168,7 +168,7 @@ footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-
       <p class="drop-copy">Freshly made in limited quantities. New selections are released every second Thursday at 1PM.</p>
     </div>
     <div class="countdown-wrap">
-      <div class="countdown-label">Next menu closes in</div>
+      <div class="countdown-label">Next menu opens in</div>
       <div class="countdown">
         <div class="count-box"><b id="days">00</b><span>Days</span></div>
         <div class="count-box"><b id="hours">00</b><span>Hours</span></div>
@@ -180,24 +180,20 @@ footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-
 
   <div class="products">
     <article class="product-card">
-      <div class="product-img"><img src="tiramisu.png" alt="Tiramisù"/></div>
-      <div class="product-body"><span class="product-tag">Limited</span><div class="product-top"><h3>Tiramisù</h3><div class="product-price">$14</div></div><p>Espresso-soaked ladyfingers, silky mascarpone and rich cocoa.</p><a class="btn btn-primary" href="order.html">Order Tiramisù</a></div>
+      <div class="product-img"><img src="maritozzo_pistacchio.png" alt="Maritozzo Pistacchio"/></div>
+      <div class="product-body"><span class="product-tag">Limited</span><div class="product-top"><h3>Maritozzo Pistacchio</h3><div class="product-price">$12</div></div><p>Soft maritozzo filled with cream, pistachio cream and crushed pistachios.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Pistacchio</a></div>
     </article>
     <article class="product-card">
-      <div class="product-img"><img src="sfogliatelle.png" alt="Sfogliatelle"/></div>
-      <div class="product-body"><span class="product-tag">Fresh baked</span><div class="product-top"><h3>Sfogliatelle</h3><div class="product-price">$10</div></div><p>Golden flaky layers filled with sweet ricotta and citrus.</p><a class="btn btn-primary" href="order.html">Order Sfogliatelle</a></div>
+      <div class="product-img"><img src="maritozzo_blueberry.png" alt="Maritozzo Blueberry"/></div>
+      <div class="product-body"><span class="product-tag">Fresh baked</span><div class="product-top"><h3>Maritozzo Blueberry</h3><div class="product-price">$12</div></div><p>Soft maritozzo filled with cream, fresh blueberries and  blueberry jam.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Blueberry</a></div>
     </article>
     <article class="product-card">
-      <div class="product-img"><img src="maritozzi.png" alt="Maritozzi"/></div>
-      <div class="product-body"><span class="product-tag">Cream filled</span><div class="product-top"><h3>Maritozzi</h3><div class="product-price">$12</div></div><p>Soft Italian buns filled generously with fresh cream.</p><a class="btn btn-primary" href="order.html">Order Maritozzi</a></div>
+      <div class="product-img"><img src="maritozzo_sundried_tomato.png" alt="Maritozzo Sun-dried Tomato"/></div>
+      <div class="product-body"><span class="product-tag">Cream filled</span><div class="product-top"><h3>Maritozzo Sun-dried Tomato</h3><div class="product-price">$12</div></div><p>Savoury maritozzo filled with creamy ricotta, sun-dried tomatoes, balsamic glaze and fresh herbs.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Sun-dried Tomato</a></div>
     </article>
     <article class="product-card">
-      <div class="product-img"><img src="cannoli-closeup.jpg" alt="Cannoli"/></div>
-      <div class="product-body"><span class="product-tag">Popular</span><div class="product-top"><h3>Cannoli</h3><div class="product-price">$8</div></div><p>Crispy shells, silky ricotta filling and authentic Italian flavour.</p><a class="btn btn-primary" href="order.html">Order Cannoli</a></div>
-    </article>
-    <article class="product-card">
-      <div class="product-img"><img src="croquemush.jpg" alt="Croque Monsieur"/></div>
-      <div class="product-body"><span class="product-tag">Savoury</span><div class="product-top"><h3>Croque Monsieur</h3><div class="product-price">$15</div></div><p>Golden toasted bread layered with mushrooms, caramalized onions, cheese and creamy béchamel.</p><a class="btn btn-primary" href="order.html">Order Savoury</a></div>
+      <div class="product-img"><img src="maritozzo_mortadella.png" alt="Maritozzo Mortadella"/></div>
+      <div class="product-body"><span class="product-tag">Popular</span><div class="product-top"><h3>Maritozzo Mortadella</h3><div class="product-price">$12</div></div><p>Savoury maritozzo filled creamy ricotta, mortadella NS mozzarella bocconcini.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Mortadella</a></div>
     </article>
   </div>
 </section>
