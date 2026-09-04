@@ -83,7 +83,7 @@ nav a{text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:9
 .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .count-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:15px 8px;text-align:center;backdrop-filter:blur(8px)}
 .count-box b{font-family:Georgia,serif;font-size:clamp(28px,3vw,44px);line-height:.9;display:block}.count-box span{font-size:8px;text-transform:uppercase;letter-spacing:1.45px;opacity:.65;display:block;margin-top:8px;font-weight:900}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .product-card{background:#fff;color:var(--blue);border-radius:28px;overflow:hidden;box-shadow:0 22px 56px rgba(0,0,0,.19);position:relative;transition:.25s}
 .product-card:hover{transform:translateY(-7px)}
 .product-img{height:270px;overflow:hidden;background:#ddd}.product-img img{width:100%;height:100%;object-fit:cover;transition:.35s}.product-card:hover .product-img img{transform:scale(1.04)}
@@ -155,7 +155,7 @@ footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-
 </section>
 
 <div class="info-strip">
-  <div><b>Next release</b> Sat 29 Aug • 8AM</div>
+  <div><b>Next release</b> Saturday 12 Sep • 8AM</div>
   <div><b>Pickup</b> Saturday • 2 Grazier Lane, Belconnen</div>
   <div><b>Small batch</b> When it’s gone, it’s gone</div>
 </div>
@@ -178,22 +178,36 @@ footer{padding:64px 7% 36px;background:var(--dark);color:#fff;display:grid;grid-
     </div>
   </div>
 
+  
   <div class="products">
     <article class="product-card">
-      <div class="product-img"><img src="maritozzo_pistacchio.png" alt="Maritozzo Pistacchio"/></div>
-      <div class="product-body"><span class="product-tag">Limited</span><div class="product-top"><h3>Maritozzo Pistacchio</h3><div class="product-price">$12</div></div><p>Soft maritozzo filled with cream, pistachio cream and crushed pistachios.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Pistacchio</a></div>
+      <div class="product-img"><img src="saporibox.png" alt="Sapori Box"/></div>
+      <div class="product-body"><span class="product-tag">Best of Sapori</span><div class="product-top"><h3>Sapori Box</h3><div class="product-price">$40</div></div><p>One of each: traditional maritozzo, cannolo, sfogliatella and tiramisù. Four Sapori favourites in one box.</p><a class="btn btn-primary" href="order.html">Order Sapori Box</a></div>
     </article>
+
     <article class="product-card">
-      <div class="product-img"><img src="maritozzo_blueberry.png" alt="Maritozzo Blueberry"/></div>
-      <div class="product-body"><span class="product-tag">Fresh baked</span><div class="product-top"><h3>Maritozzo Blueberry</h3><div class="product-price">$12</div></div><p>Soft maritozzo filled with cream, fresh blueberries and  blueberry jam.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Blueberry</a></div>
+      <div class="product-img"><img src="cannolicloseup.jpg" alt="Cannoli Box"/></div>
+      <div class="product-body"><span class="product-tag">6 pieces</span><div class="product-top"><h3>Cannoli Box</h3><div class="product-price">$40</div></div><p>Six crisp cannoli filled with custard. Made for sharing — or not.</p><a class="btn btn-primary" href="order.html">Order Cannoli Box</a></div>
     </article>
+
     <article class="product-card">
-      <div class="product-img"><img src="maritozzo_sundried_tomato.png" alt="Maritozzo Sun-dried Tomato"/></div>
-      <div class="product-body"><span class="product-tag">Cream filled</span><div class="product-top"><h3>Maritozzo Sun-dried Tomato</h3><div class="product-price">$12</div></div><p>Savoury maritozzo filled with creamy ricotta, sun-dried tomatoes, balsamic glaze and fresh herbs.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Sun-dried Tomato</a></div>
+      <div class="product-img"><img src="maritozzi.png" alt="Maritozzo Traditional"/></div>
+      <div class="product-body"><span class="product-tag">Traditional</span><div class="product-top"><h3>Maritozzo Traditional</h3><div class="product-price">$12</div></div><p>Soft Italian brioche generously filled with fresh cream. Simple, classic and properly indulgent.</p><a class="btn btn-primary" href="order.html">Order Maritozzo</a></div>
     </article>
+
     <article class="product-card">
-      <div class="product-img"><img src="maritozzo_mortadella.png" alt="Maritozzo Mortadella"/></div>
-      <div class="product-body"><span class="product-tag">Popular</span><div class="product-top"><h3>Maritozzo Mortadella</h3><div class="product-price">$12</div></div><p>Savoury maritozzo filled creamy ricotta, mortadella NS mozzarella bocconcini.</p><a class="btn btn-primary" href="order.html">Order Maritozzo Mortadella</a></div>
+      <div class="product-img"><img src="cannoli-closeup.jpg" alt="Cannoli"/></div>
+      <div class="product-body"><span class="product-tag">Popular</span><div class="product-top"><h3>Cannoli</h3><div class="product-price">$8</div></div><p>Crispy shell filled with custard cream and authentic Italian flavour.</p><a class="btn btn-primary" href="order.html">Order Cannoli</a></div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-img"><img src="sfogliatelle.png" alt="Sfogliatelle"/></div>
+      <div class="product-body"><span class="product-tag">Fresh baked</span><div class="product-top"><h3>Sfogliatelle</h3><div class="product-price">$10</div></div><p>Golden, flaky layers with a sweet ricotta and citrus filling.</p><a class="btn btn-primary" href="order.html">Order Sfogliatelle</a></div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-img"><img src="tiramisu.png" alt="Tiramisù"/></div>
+      <div class="product-body"><span class="product-tag">Classic</span><div class="product-top"><h3>Tiramisù</h3><div class="product-price">$14</div></div><p>Espresso-soaked ladyfingers, silky mascarpone and rich cocoa.</p><a class="btn btn-primary" href="order.html">Order Tiramisù</a></div>
     </article>
   </div>
 </section>
